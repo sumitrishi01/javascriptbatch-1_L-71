@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L-71</title>
+    </head>
+    <body>
+        <script>
+            u = document.createElement('ul');
+            console.log(u);
+
+            for (let i = 0; i < 10; i++) {
+                var li = document.createElement('li');
+                // li.innerHTML = "Hello";
+                li.setAttribute('class','s_li com');
+                li.classList.add('common');
+                
+                var tn = document.createTextNode('Hello '+(i+1));
+                li.appendChild(tn);
+                console.log(li);
+
+                u.appendChild(li);
+            }
+
+            document.body.appendChild(u);
+            // u.appendChild('li')       
+
+            var u;
+
+            var object = document.getElementsByClassName('common');
+            console.log(object);
+
+            console.log(typeof object);
+
+            for (var p in object){
+                console.log(p);
+                console.log(!isNaN(p));
+                if(!isNaN(p) && ((p < 3) || (p >= 5))){ //3 is the condition of red color.
+                    object[p].style.color = 'red';
+                }                
+            }
+
+            var o1 = {
+                /*
+                    //1. P:V
+                    //2. Method
+                */
+                'name':'Sumit',
+                "surname":"Kumar",
+                mission:'To Educate Students',
+
+                getFullName:function(){
+                    return this.name +" "+this.surname; //this is using to refer current object.
+                },
+                getMission:function(){ //ES6 Fat Arrow Function
+                    //to return something
+                    return this.mission;
+                }
+            };
+
+            //How to access the properties of JS Object
+            //1. Object.property name
+            console.log(o1.name);
+
+            //2. object["property"]
+            console.log(o1["surname"]);
+
+            let m = 'mission';
+
+            //3. object[expression]
+            console.log(o1[m]);
+
+            console.log(o1.getFullName());
+            console.log(o1.getMission());
+            
+        </script>
+        
+    </body>
+</html>

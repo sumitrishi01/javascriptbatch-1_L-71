@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L-70_Traversing_UP_and_DOWN</title>
+    </head>
+    <body>
+        <div class="gp" id="grandparent">
+            Grand Child
+            <div class="p">
+                Parent
+                <div class="c">
+                    Child
+                    <div class="gc gc1">
+                        Grand Child1
+                    </div>
+                    <div class="gc gc2">
+                        Grand Child2
+                    </div>
+                </div>
+            </div>
+        </div>
+         <script>
+           p  = document.getElementById('grandparent');
+
+           arr = p.querySelectorAll('.gc');
+
+           arr.forEach(function(currentElement,index,arr){
+            currentElement.style.color = 'orange';
+           });
+
+        //    p.querySelector('div.gc.gc2').style.color = 'Orange';
+        </script>
+    </body>
+</html>
